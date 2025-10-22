@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="דף הכנה מקיף למבחן ראשון בפייתון עם תרגילים ודוגמאות קוד">
+    <meta name="theme-color" content="#1a365d">
+    <title>דף הכנה למבחן - פייתון</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="logo192.png">
+    <link rel="apple-touch-icon" href="logo192.png">
+</head>
+<body>
+    <div class="container">
+        <script>
+            console.log('דף זה נכתב ע"י איתי חתואל')
+        </script>
+        <h1>דף הכנה למבחן - פייתון</h1>
+
+        <h2>הדפסה לפלט</h2>
+        <p>הדפסה נעשית באמצעות <span class="inline-code">print()</span> - זוהי הפקודה היחידה להדפסה במבחן!</p>
+        
+        <div class="tip-box">
+            <strong>נקודות חשובות:</strong>
+            <ul>
+                <li>תמיד עם סוגריים <span class="inline-code">()</span></li>
+                <li>טקסט בתוך גרשיים או גרש-גרש</li>
+                <li>משתנים ללא גרשיים</li>
+                <li>ניתן להדפיס כמה דברים ברצף עם פסיק</li>
+            </ul>
+        </div>
+        
+        <div class="example-box">
+            <div class="code-block"><span class="function">print</span>(<span class="string">"hello"</span>)          <span class="comment"># הדפסת טקסט</span>
+<span class="variable">x</span> <span class="operator">=</span> <span class="number">5</span>
+<span class="function">print</span>(<span class="variable">x</span>)                <span class="comment"># הדפסת משתנה</span>
+<span class="function">print</span>(<span class="string">"הערך הוא:"</span>, <span class="variable">x</span>)   <span class="comment"># הדפסה מעורבת</span>
+<span class="function">print</span>(<span class="variable">x</span>, <span class="string">"זוגי"</span>)        <span class="comment"># כמה ערכים ביחד</span></div>
+        </div>
+
+        <h2>קלט מהמשתמש</h2>
+        
+        <div class="warning-box">
+            <strong>עיקרון קריטי:</strong> <span class="inline-code">input()</span> תמיד מחזיר מחרוזת! 
+            אם צריך מספר - חובה להמיר עם <span class="inline-code">int()</span> או <span class="inline-code">float()</span>
+        </div>
+        
+        <div class="operators-grid">
+            <div class="operator-card">
+                <strong>מחרוזת:</strong><br>
+                <span class="inline-code">x = input()</span><br>
+                <small>לטקסט, שמות, מילים</small>
+            </div>
+            <div class="operator-card">
+                <strong>מספר שלם:</strong><br>
+                <span class="inline-code">x = int(input())</span><br>
+                <small>למספרים ללא נקודה עשרונית</small>
+            </div>
+            <div class="operator-card">
+                <strong>מספר עשרוני:</strong><br>
+                <span class="inline-code">x = float(input())</span><br>
+                <small>למספרים עם נקודה עשרונית</small>
+            </div>
+        </div>
+        
+        <div class="example-box">
+            <strong>דוגמה נפוצה בבחינות:</strong>
+            <div class="code-block"><span class="comment"># קלט שם (מחרוזת)</span>
+<span class="variable">name</span> <span class="operator">=</span> <span class="function">input</span>()
+
+<span class="comment"># קלט גיל (מספר שלם)</span> 
+<span class="variable">age</span> <span class="operator">=</span> <span class="keyword">int</span>(<span class="function">input</span>())
+
+<span class="comment"># קלט ציון (מספר עשרוני)</span>
+<span class="variable">grade</span> <span class="operator">=</span> <span class="keyword">float</span>(<span class="function">input</span>())</div>
+        </div>
+
+        <h2>תנאים ואופרטורים</h2>
+        
+        <div class="warning-box">
+            <strong>נקודתיים חובה!</strong> אחרי כל <span class="inline-code">if</span> חייבים להיות נקודתיים <span class="inline-code">:</span>
+        </div>
+        
+        <div class="code-block"><span class="keyword">if</span> תנאי:
+    קוד שיתבצע אם התנאי נכון
+    עוד קוד (עם אינדנטציה!)</div>
+
+        <h3>אופרטורי השוואה</h3>
+        <div class="operators-grid">
+            <div class="operator-card">
+                <span class="inline-code">==</span> שווה בדיוק<br>
+                <small>לא <span class="inline-code">=</span> בודד!</small>
+            </div>
+            <div class="operator-card">
+                <span class="inline-code">!=</span> לא שווה<br>
+                <small>ההפך מ-<span class="inline-code">==</span></small>
+            </div>
+            <div class="operator-card">
+                <span class="inline-code">></span> גדול מ<br>
+                <small>ללא שוויון</small>
+            </div>
+            <div class="operator-card">
+                <span class="inline-code"><</span> קטן מ<br>
+                <small>ללא שוויון</small>
+            </div>
+            <div class="operator-card">
+                <span class="inline-code">>=</span> גדול או שווה<br>
+                <small>כולל שוויון</small>
+            </div>
+            <div class="operator-card">
+                <span class="inline-code"><=</span> קטן או שווה<br>
+                <small>כולל שוויון</small>
+            </div>
+        </div>
+
+        <h3>אופרטורים לוגיים - הבנה מעמיקה</h3>
+        <div class="tip-box">
+            <ul>
+                <li><span class="inline-code">and</span> - <strong>שני התנאים חייבים להיות נכונים יחד</strong>. אם אחד לא נכון, התוצאה False</li>
+                <li><span class="inline-code">or</span> - <strong>מספיק שאחד מהתנאים נכון</strong>. רק אם שניהם לא נכונים התוצאה False</li>
+            </ul>
+        </div>
+
+        <div class="example-box">
+            <strong>דוגמאות מהמבחן:</strong>
+            <div class="code-block"><span class="comment"># בדיקת טווח - שני תנאים יחד</span>
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">></span> <span class="number">5</span> <span class="keyword">and</span> <span class="variable">x</span> <span class="operator"><</span> <span class="number">10</span>:
+    <span class="function">print</span>(<span class="string">"בטווח 5-10"</span>)
+
+<span class="comment"># תנאי רחב - אחד מהתנאים מספיק</span>  
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">></span> <span class="number">7</span> <span class="keyword">or</span> <span class="variable">x</span> <span class="operator"><</span> <span class="number">12</span>:
+    <span class="function">print</span>(<span class="string">"מחוץ לטווח 7-12"</span>)
+
+<span class="comment"># בדיקת שוויון/אי-שוויון</span>
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">!=</span> <span class="number">50</span>:
+    <span class="function">print</span>(<span class="string">"לא 50"</span>)
+    
+<span class="keyword">if</span> <span class="variable">name</span> <span class="operator">==</span> <span class="string">"דני"</span>:
+    <span class="function">print</span>(<span class="string">"שלום דני!"</span>)</div>
+        </div>
+
+        <h2>אופרטורים מתמטיים</h2>
+        
+        <div class="warning-box">
+            <strong>הבדל קריטי:</strong> 
+            <span class="inline-code">/</span> ו-<span class="inline-code">%</span> עושים דברים שונים לחלוטין!
+        </div>
+        
+        <div class="operators-grid">
+            <div class="operator-card">
+                <strong><span class="inline-code">/</span> חילוק רגיל</strong><br>
+                מחזיר תוצאה עשרונית<br>
+                <span class="inline-code">30/3 = 10.0</span><br>
+                <span class="inline-code">10/3 = 3.333...</span>
+            </div>
+            <div class="operator-card">
+                <strong><span class="inline-code">%</span> שארית חלוקה</strong><br>
+                מחזיר מה שנשאר אחרי החלוקה<br>
+                <span class="inline-code">12 % 7 = 5</span><br>
+                <span class="inline-code">30 % 3 = 0</span>
+            </div>
+        </div>
+        
+        <div class="example-box">
+            <strong>איך לזכור את ההבדל:</strong>
+            <div class="code-block"><span class="comment"># חילוק רגיל - כמה פעמים נכנס + שברים</span>
+<span class="number">10</span> <span class="operator">/</span> <span class="number">3</span> <span class="operator">=</span> <span class="number">3.333</span>...  <span class="comment"># 3 שלמים ועוד קצת</span>
+
+<span class="comment"># שארית - מה נשאר אחרי חלוקה שלמה</span>  
+<span class="number">10</span> <span class="operator">%</span> <span class="number">3</span> <span class="operator">=</span> <span class="number">1</span>        <span class="comment"># 3 נכנס 3 פעמים (9), נשאר 1</span>
+
+<span class="comment"># דוגמאות נוספות:</span>
+<span class="number">15</span> <span class="operator">%</span> <span class="number">4</span> <span class="operator">=</span> <span class="number">3</span>        <span class="comment"># 4*3=12, נשאר 3</span>
+<span class="number">20</span> <span class="operator">%</span> <span class="number">5</span> <span class="operator">=</span> <span class="number">0</span>        <span class="comment"># 5*4=20, לא נשאר כלום</span></div>
+        </div>
+
+        <h3>בדיקת זוגי/אי-זוגי - המושג החשוב ביותר</h3>
+        <div class="tip-box">
+            <strong>עיקרון:</strong> מספר זוגי מתחלק ב-2 ללא שארית. אי-זוגי משאיר שארית 1.
+            <div class="code-block"><span class="comment"># זוגי: שארית 0 כשמחלקים ב-2</span>
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">%</span> <span class="number">2</span> <span class="operator">==</span> <span class="number">0</span>:
+    <span class="function">print</span>(<span class="string">"זוגי"</span>)
+    
+<span class="comment"># אי-זוגי: שארית 1 כשמחלקים ב-2</span>  
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">%</span> <span class="number">2</span> <span class="operator">==</span> <span class="number">1</span>:
+    <span class="function">print</span>(<span class="string">"אי-זוגי"</span>)
+    
+<span class="comment"># או עם else (יותר נפוץ בבחינות):</span>
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">%</span> <span class="number">2</span> <span class="operator">==</span> <span class="number">0</span>:
+    <span class="function">print</span>(<span class="string">"זוגי"</span>) 
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">"אי-זוגי"</span>)</div>
+        </div>
+
+        <h2>מחרוזות - נושא קריטי במבחן</h2>
+        
+        <div class="warning-box">
+            <strong>חשוב לזכור:</strong> מחרוזת = רצף תווים (כמו מערך). 
+            האינדקס הראשון תמיד <span class="inline-code">0</span>, לא <span class="inline-code">1</span>!
+        </div>
+        
+        <div class="example-box">
+            <strong>דוגמה לאינדקסים:</strong>
+            <div class="code-block"><span class="variable">s</span> <span class="operator">=</span> <span class="string">"HELLO"</span>
+<span class="comment"># אינדקס:  0 1 2 3 4</span>
+<span class="comment">#           H E L L O</span>
+
+<span class="function">print</span>(<span class="variable">s</span>[<span class="number">0</span>])   <span class="comment"># H - התו הראשון</span>
+<span class="function">print</span>(<span class="variable">s</span>[<span class="number">4</span>])   <span class="comment"># O - התו האחרון</span>  
+<span class="function">print</span>(<span class="variable">s</span>[<span class="number">-1</span>])  <span class="comment"># O - התו האחרון (דרך אחרת)</span></div>
+        </div>
+        
+        <div class="operators-grid">
+            <div class="operator-card">
+                <strong><span class="inline-code">len(s)</span></strong><br>
+                כמה תווים במחרוזת<br>
+                <small><span class="inline-code">len("hello") = 5</span></small>
+            </div>
+            <div class="operator-card">
+                <strong><span class="inline-code">s.upper()</span></strong><br>
+                הופך לאותיות גדולות<br>
+                <small><span class="inline-code">"abc" → "ABC"</span></small>
+            </div>
+            <div class="operator-card">
+                <strong><span class="inline-code">s.lower()</span></strong><br>
+                הופך לאותיות קטנות<br>
+                <small><span class="inline-code">"XYZ" → "xyz"</span></small>
+            </div>
+            <div class="operator-card">
+                <strong><span class="inline-code">s.count('x')</span></strong><br>
+                כמה פעמים תו מופיע<br>
+                <small><span class="inline-code">"hello".count('l') = 2</span></small>
+            </div>
+        </div>
+        
+        <div class="tip-box">
+            <strong>דוגמאות נפוצות במבחנים:</strong>
+            <div class="code-block"><span class="comment"># קבלת שם והדפסת האות הראשונה</span>
+<span class="variable">name</span> <span class="operator">=</span> <span class="function">input</span>()
+<span class="function">print</span>(<span class="variable">name</span>[<span class="number">0</span>].<span class="function">upper</span>())  <span class="comment"># האות הראשונה באות גדולה</span>
+
+<span class="comment"># ספירת כמה פעמים אות מופיעה</span>
+<span class="variable">text</span> <span class="operator">=</span> <span class="string">"hello world"</span>
+<span class="function">print</span>(<span class="variable">text</span>.<span class="function">count</span>(<span class="string">'o'</span>))  <span class="comment"># תדפיס 2</span>
+
+<span class="comment"># בדיקת אורך מחרוזת</span>
+<span class="variable">password</span> <span class="operator">=</span> <span class="function">input</span>()
+<span class="keyword">if</span> <span class="function">len</span>(<span class="variable">password</span>) <span class="operator">>=</span> <span class="number">8</span>:
+    <span class="function">print</span>(<span class="string">"סיסמה חזקה"</span>)</div>
+        </div>
+
+        <h2>טבלת אמת - המפתח להבנת אופרטורים לוגיים</h2>
+        
+        <div class="tip-box">
+            <strong>איך לזכור:</strong>
+            <ul>
+                <li><span class="inline-code">and</span> - כמו כפל: אפס אחד הורס הכל (False אחד = False)</li>
+                <li><span class="inline-code">or</span> - כמו חיבור: מספיק אחד חיובי (True אחד = True)</li>
+            </ul>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>תנאי A</th>
+                    <th>תנאי B</th>
+                    <th>A and B</th>
+                    <th>A or B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>True</td>
+                    <td>True</td>
+                    <td><strong>True</strong></td>
+                    <td><strong>True</strong></td>
+                </tr>
+                <tr>
+                    <td>True</td>
+                    <td>False</td>
+                    <td><strong>False</strong></td>
+                    <td><strong>True</strong></td>
+                </tr>
+                <tr>
+                    <td>False</td>
+                    <td>True</td>
+                    <td><strong>False</strong></td>
+                    <td><strong>True</strong></td>
+                </tr>
+                <tr>
+                    <td>False</td>
+                    <td>False</td>
+                    <td><strong>False</strong></td>
+                    <td><strong>False</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="example-box">
+            <strong>דוגמה מעשית:</strong>
+            <div class="code-block"><span class="comment"># נניח x = 8</span>
+<span class="comment"># תנאי A: x > 5  → True (8 > 5)</span>
+<span class="comment"># תנאי B: x < 10 → True (8 < 10)</span>
+
+<span class="comment"># x > 5 and x < 10 → True and True → True</span>
+<span class="comment"># x > 5 or x > 15  → True or False → True</span>  
+<span class="comment"># x < 3 and x > 0  → False and True → False</span></div>
+        </div>
+
+        <h2>שגיאות נפוצות - חשוב לא לפספס!</h2>
+        
+        <div class="warning-box">
+            <strong>השגיאות שגורמות לכישלון במבחן:</strong>
+            <ul>
+                <li><strong>נקודתיים חסרים:</strong> לשכוח <span class="inline-code">:</span> אחרי <span class="inline-code">if</span> - השגיאה הכי שכיחה!</li>
+                <li><strong>המרה חסרה:</strong> לכתוב <span class="inline-code">x = input()</span> במקום <span class="inline-code">x = int(input())</span> כשצריך מספר</li>
+                <li><strong>בלבול אופרטורים:</strong> להתבלבל בין <span class="inline-code">/</span> (חילוק) ל־<span class="inline-code">%</span> (שארית)</li>
+                <li><strong>בלבול השוואה:</strong> לכתוב <span class="inline-code">=</span> במקום <span class="inline-code">==</span> בתנאים</li>
+                <li><strong>אינדקס שגוי:</strong> לחשוב שהאינדקס הראשון הוא <span class="inline-code">1</span> במקום <span class="inline-code">0</span></li>
+                <li><strong>גרשיים שגויים:</strong> להתבלבל מתי להשתמש בגרשיים ומתי לא</li>
+            </ul>
+        </div>
+        
+        <div class="example-box">
+            <strong>דוגמאות לשגיאות ותיקונים:</strong>
+            <div class="code-block"><span class="comment"># ❌ שגוי</span>
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">></span> <span class="number">5</span>          <span class="comment"># חסרים נקודתיים</span>
+<span class="variable">x</span> <span class="operator">=</span> <span class="function">input</span>()       <span class="comment"># יהיה מחרוזת, לא מספר</span>
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">5</span>:         <span class="comment"># השוואה שגויה</span>
+<span class="function">print</span> <span class="variable">x</span>           <span class="comment"># חסרות סוגריים</span>
+
+<span class="comment"># ✅ נכון</span>  
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">></span> <span class="number">5</span>:         <span class="comment"># עם נקודתיים</span>
+<span class="variable">x</span> <span class="operator">=</span> <span class="keyword">int</span>(<span class="function">input</span>())  <span class="comment"># עם המרה למספר</span>
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">==</span> <span class="number">5</span>:        <span class="comment"># השוואה נכונה</span>
+<span class="function">print</span>(<span class="variable">x</span>)          <span class="comment"># עם סוגריים</span></div>
+        </div>
+
+        <h2>דוגמאות קוד</h2>
+        
+        <div class="practice-section">
+            <h3>בדיקת זוגי/אי-זוגי</h3>
+            <div class="code-block"><span class="variable">x</span> <span class="operator">=</span> <span class="keyword">int</span>(<span class="function">input</span>())
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">%</span> <span class="number">2</span> <span class="operator">==</span> <span class="number">0</span>:
+    <span class="function">print</span>(<span class="string">"even"</span>)
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">"odd"</span>)</div>
+            
+            <h3>תנאי מורכב</h3>
+            <div class="code-block"><span class="variable">x</span> <span class="operator">=</span> <span class="keyword">int</span>(<span class="function">input</span>())
+<span class="keyword">if</span> <span class="variable">x</span> <span class="operator">></span> <span class="number">5</span> <span class="keyword">and</span> <span class="variable">x</span> <span class="operator"><</span> <span class="number">10</span>:
+    <span class="function">print</span>(<span class="string">"inside"</span>)
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">"outside"</span>)</div>
+
+            <h3>פעולות על מחרוזות</h3>
+            <div class="code-block"><span class="variable">s</span> <span class="operator">=</span> <span class="function">input</span>()
+<span class="function">print</span>(<span class="variable">s</span>[<span class="number">0</span>].<span class="function">upper</span>())
+<span class="function">print</span>(<span class="function">len</span>(<span class="variable">s</span>))
+<span class="function">print</span>(<span class="variable">s</span>.<span class="function">count</span>(<span class="string">'o'</span>))</div>
+        </div>
+
+        <h2>טיפים להכנה יעילה למבחן</h2>
+        
+        <div class="practice-section">
+            <h3>אסטרטגיית הכנה</h3>
+            <div class="tip-box">
+                <strong>שלב 1 - חזרה על היסודות (יום לפני המבחן):</strong>
+                <ul>
+                    <li>קיראו את כל הדף הזה מתחילה לסוף</li>
+                    <li>תרגלו כל דוגמה בראש לפני שאתם רואים את התשובה</li>
+                    <li>שיננו את טבלת האמת - היא קריטית!</li>
+                    <li>תכתבו מזכרת קטנה עם השגיאות הנפוצות</li>
+                </ul>
+            </div>
+            
+            <div class="warning-box">
+                <strong>שלב 2 - תרגול מעשי (3-4 ימים לפני):</strong>
+                <ul>
+                    <li><strong>כתבו קוד בעצמכם!</strong> אל תסתפקו בקריאה - פתחו מחשב וכתבו</li>
+                    <li>תרגלו בדיקות זוגי/אי-זוגי עד שזה יהיה אוטומטי</li>
+                    <li>כתבו 5 תוכניות קטנות עם <span class="inline-code">input</span> ו-<span class="inline-code">print</span></li>
+                    <li>תרגלו פעולות על מחרוזות - <span class="inline-code">len()</span>, <span class="inline-code">upper()</span>, <span class="inline-code">count()</span></li>
+                    <li>בדקו את עצמכם בטבלת האמת - תמציאו תרחישים ותבדקו</li>
+                </ul>
+            </div>
+            
+            <div class="example-box">
+                <strong>שלב 3 - סימולציה (יום המבחן):</strong>
+                <ul>
+                    <li><strong>קיראו כל שאלה פעמיים</strong> לפני שאתם עונים</li>
+                    <li><strong>זהו מילות מפתח:</strong> "זוגי" = <span class="inline-code">% 2</span>, "אורך" = <span class="inline-code">len()</span></li>
+                    <li><strong>בדקו תמיד:</strong> נקודתיים אחרי <span class="inline-code">if</span>, סוגריים ב-<span class="inline-code">print</span></li>
+                    <li><strong>אל תמהרו!</strong> רוב השגיאות הן מחוסר קשב, לא מחוסר ידע</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="practice-section">
+            <h3>רשימת בדיקה לפני הגשה</h3>
+            <div class="operators-grid">
+                <div class="operator-card">
+                    <strong>בדיקת תחביר</strong><br>
+                    ✓ נקודתיים אחרי if<br>
+                    ✓ סוגריים ב-print<br>
+                    ✓ גרשיים נכונים
+                </div>
+                <div class="operator-card">
+                    <strong>בדיקת קלט</strong><br>
+                    ✓ int() למספרים<br>
+                    ✓ input() ללא המרה לטקסט<br>
+                    ✓ float() לעשרוניים
+                </div>
+                <div class="operator-card">
+                    <strong>בדיקת לוגיקה</strong><br>
+                    ✓ == במקום =<br>
+                    ✓ and/or נכון<br>
+                    ✓ % במקום / (ולהפך)
+                </div>
+                <div class="operator-card">
+                    <strong>בדיקת מחרוזות</strong><br>
+                    ✓ אינדקס מ-0<br>
+                    ✓ len() לאורך<br>
+                    ✓ count() לספירה
+                </div>
+            </div>
+        </div>
+        
+        <div class="practice-section">
+            <h3>תרגילים אחרונים לפני המבחן</h3>
+            <div class="tip-box">
+                <strong>תכתבו את התוכניות האלה בלי לראות תשובות:</strong>
+                <ol>
+                    <li>תוכנית שקולטת מספר ואומרת אם הוא זוגי או אי-זוגי</li>
+                    <li>תוכנית שקולטת שם ומדפיסה את האות הראשונה באות גדולה</li>
+                    <li>תוכנית שבודקת אם מספר נמצא בטווח 10-20</li>
+                    <li>תוכנית שסופרת כמה פעמים האות 'a' מופיעה במילה</li>
+                    <li>תוכנית שבודקת אם מספר גדול מ-100 או קטן מ-10</li>
+                </ol>
+                <small><strong>רק אחרי שתכתבו - בדקו עם הדוגמאות בדף!</strong></small>
+            </div>
+        </div>
+
+        <h2>תרגילים נוספים לתרגול</h2>
+        
+        <div class="practice-section">
+            <h3>תרגילים למתחילים</h3>
+            <div class="example-box">
+                <strong>תרגיל 1 - הדפסה וקלט בסיסי:</strong>
+                <div class="code-block"><span class="comment"># כתבו תוכנית שקולטת שם ואומרת שלום</span>
+<span class="variable">name</span> <span class="operator">=</span> <span class="function">input</span>()
+<span class="function">print</span>(<span class="string">"שלום"</span>, <span class="variable">name</span>)</div>
+            </div>
+            
+            <div class="example-box">
+                <strong>תרגיל 2 - בדיקת גיל:</strong>
+                <div class="code-block"><span class="comment"># קלטו גיל ובדקו אם המשתמש בגר</span>
+<span class="variable">age</span> <span class="operator">=</span> <span class="keyword">int</span>(<span class="function">input</span>())
+<span class="keyword">if</span> <span class="variable">age</span> <span class="operator">>=</span> <span class="number">18</span>:
+    <span class="function">print</span>(<span class="string">"בגר"</span>)
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">"קטין"</span>)</div>
+            </div>
+            
+            <div class="example-box">
+                <strong>תרגיל 3 - בדיקת ציון:</strong>
+                <div class="code-block"><span class="comment"># קלטו ציון ובדקו אם עבר (מעל 60)</span>
+<span class="variable">grade</span> <span class="operator">=</span> <span class="keyword">int</span>(<span class="function">input</span>())
+<span class="keyword">if</span> <span class="variable">grade</span> <span class="operator">>=</span> <span class="number">60</span>:
+    <span class="function">print</span>(<span class="string">"עבר"</span>)
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">"נכשל"</span>)</div>
+            </div>
+        </div>
+        
+        <div class="practice-section">
+            <h3>תרגילים מתקדמים</h3>
+            <div class="example-box">
+                <strong>תרגיל 4 - בדיקת טווח מספרים:</strong>
+                <div class="code-block"><span class="comment"># בדקו אם מספר נמצא בין 50 ל-100</span>
+<span class="variable">num</span> <span class="operator">=</span> <span class="keyword">int</span>(<span class="function">input</span>())
+<span class="keyword">if</span> <span class="variable">num</span> <span class="operator">>=</span> <span class="number">50</span> <span class="keyword">and</span> <span class="variable">num</span> <span class="operator"><=</span> <span class="number">100</span>:
+    <span class="function">print</span>(<span class="string">"בטווח"</span>)
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">"מחוץ לטווח"</span>)</div>
+            </div>
+            
+            <div class="example-box">
+                <strong>תרגיל 5 - בדיקת חלוקה:</strong>
+                <div class="code-block"><span class="comment"># בדקו אם מספר מתחלק ב-3 או ב-5</span>
+<span class="variable">num</span> <span class="operator">=</span> <span class="keyword">int</span>(<span class="function">input</span>())
+<span class="keyword">if</span> <span class="variable">num</span> <span class="operator">%</span> <span class="number">3</span> <span class="operator">==</span> <span class="number">0</span> <span class="keyword">or</span> <span class="variable">num</span> <span class="operator">%</span> <span class="number">5</span> <span class="operator">==</span> <span class="number">0</span>:
+    <span class="function">print</span>(<span class="string">"מתחלק"</span>)
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">"לא מתחלק"</span>)</div>
+            </div>
+            
+            <div class="example-box">
+                <strong>תרגיל 6 - עבודה עם מחרוזות:</strong>
+                <div class="code-block"><span class="comment"># קלטו מילה והדפיסו אותה כולה באותיות גדולות</span>
+<span class="variable">word</span> <span class="operator">=</span> <span class="function">input</span>()
+<span class="function">print</span>(<span class="variable">word</span>.<span class="function">upper</span>())
+<span class="function">print</span>(<span class="string">"אורך המילה:"</span>, <span class="function">len</span>(<span class="variable">word</span>))</div>
+            </div>
+        </div>
+        
+        <div class="practice-section">
+            <h3>תרגילים לבחינה</h3>
+            <div class="example-box">
+                <strong>תרגיל 7 - משולב מתקדם:</strong>
+                <div class="code-block"><span class="comment"># קלטו שם ובדקו אם הוא מתחיל באות גדולה</span>
+<span class="variable">name</span> <span class="operator">=</span> <span class="function">input</span>()
+<span class="keyword">if</span> <span class="variable">name</span>[<span class="number">0</span>].<span class="function">upper</span>() <span class="operator">==</span> <span class="variable">name</span>[<span class="number">0</span>]:
+    <span class="function">print</span>(<span class="string">"השם מתחיל באות גדולה"</span>)
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">"השם מתחיל באות קטנה"</span>)</div>
+            </div>
+            
+            <div class="example-box">
+                <strong>תרגיל 8 - ספירת תווים:</strong>
+                <div class="code-block"><span class="comment"># קלטו משפט וספרו כמה רווחים יש בו</span>
+<span class="variable">sentence</span> <span class="operator">=</span> <span class="function">input</span>()
+<span class="variable">spaces</span> <span class="operator">=</span> <span class="variable">sentence</span>.<span class="function">count</span>(<span class="string">' '</span>)
+<span class="function">print</span>(<span class="string">"כמות רווחים:"</span>, <span class="variable">spaces</span>)</div>
+            </div>
+            
+            <div class="example-box">
+                <strong>תרגיל 9 - תרגיל מורכב:</strong>
+                <div class="code-block"><span class="comment"># קלטו מספר ובדקו אם הוא חיובי וזוגי</span>
+<span class="variable">num</span> <span class="operator">=</span> <span class="keyword">int</span>(<span class="function">input</span>())
+<span class="keyword">if</span> <span class="variable">num</span> <span class="operator">></span> <span class="number">0</span> <span class="keyword">and</span> <span class="variable">num</span> <span class="operator">%</span> <span class="number">2</span> <span class="operator">==</span> <span class="number">0</span>:
+    <span class="function">print</span>(<span class="string">"המספר חיובי וזוגי"</span>)
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">"המספר לא חיובי וזוגי יחד"</span>)</div>
+            </div>
+            
+            <div class="example-box">
+                <strong>תרגיל 10 - אתגר:</strong>
+                <div class="code-block"><span class="comment"># קלטו שם ובדקו אם האות האחרונה זהה לראשונה</span>
+<span class="variable">name</span> <span class="operator">=</span> <span class="function">input</span>()
+<span class="keyword">if</span> <span class="variable">name</span>[<span class="number">0</span>].<span class="function">lower</span>() <span class="operator">==</span> <span class="variable">name</span>[<span class="number">-1</span>].<span class="function">lower</span>():
+    <span class="function">print</span>(<span class="string">"האות הראשונה והאחרונה זהות"</span>)
+<span class="keyword">else</span>:
+    <span class="function">print</span>(<span class="string">"האותיות שונות"</span>)</div>
+            </div>
+        </div>
+        
+        <div class="practice-section">
+            <h3>משימות לתרגול עצמאי</h3>
+            <div class="warning-box">
+                <strong>נסו לפתור בעצמכם לפני שאתם מסתכלים על הפתרונות למעלה:</strong>
+                <ol>
+                    <li><strong>קליטת שני מספרים:</strong> כתבו תוכנית שקולטת שני מספרים ומדפיסה את הגדול מביניהם</li>
+                    <li><strong>בדיקת סיסמה:</strong> כתבו תוכנית שקולטת סיסמה ובודקת אם היא ארוכה מ-8 תווים</li>
+                    <li><strong>חישוב ממוצע:</strong> קלטו שלושה ציונים וחשבו את הממוצע שלהם</li>
+                    <li><strong>בדיקת תו:</strong> קלטו מחרוזת ותו, ובדקו אם התו מופיע במחרוזת</li>
+                    <li><strong>משחק ניחושים:</strong> המחשב "חושב" על מספר (למשל 42), המשתמש מנחש ואתם אומרים אם נכון</li>
+                </ol>
+                <p><strong>טיפ:</strong> אחרי שתפתרו, השוו עם הדוגמאות שלמעלה ותראו איך אפשר לשפר!</p>
+            </div>
+        </div>
+
+        <div class="final-message">
+            זכרו: הביטחון שלכם במבחן תלוי בתרגול מעשי, לא רק בקריאה!<br>
+            בהצלחה במבחן
+        </div>
+    </div>
+</body>
+</html>
